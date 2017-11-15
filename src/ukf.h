@@ -28,6 +28,13 @@ public:
   ///* state covariance matrix
   MatrixXd P_;
 
+//  //set state dimension
+//  int n_x_;
+//
+//  //set augmented dimension
+//  int n_aug_;
+
+
   ///* predicted sigma points matrix
   MatrixXd Xsig_pred_;
 
@@ -102,6 +109,8 @@ public:
    * @param meas_package The measurement at k+1
    */
   void UpdateRadar(MeasurementPackage meas_package);
+  void GenerateSigmaPoints(MatrixXd* Xsig_out);
+  void AugmentedSigmaPoints(MatrixXd* Xsig_out);
 };
 
 #endif /* UKF_H */
