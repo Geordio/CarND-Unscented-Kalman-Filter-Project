@@ -22,16 +22,22 @@ In addition, a python file, nis_viz.py, to visualise the NIS was created.
 
 ## Accuracy
 
-When run against the simulator using Dataset 1, my implementation acheives a final RMSE of:
-X: 0.0677
-Y: 0.0844
-VX: 0.3450
-VY: 0.2356
+When run against the simulator using Dataset 1, the results below are acheived.
+
+Parameter  |  Target |  Result
+--|---|--
+X  | < 0.9  |  0.0677
+Y  | < 0.10  |  0.0844
+VX  | < 0.40  |  0.3450
+VY  | < 0.30  |  0.2356
+
+Therefore the solution acheives the required performance.
+
 
 A screenshot can be seen below:
 ![Simulator View](https://github.com/Geordio/CarND-Unscented-Kalman-Filter-Project/blob/master/writeup/simulator%20_screenshot.png  "Simulator View")
 
-This satisifies the required target of .09, .10, .40, .30  respectively.
+
 
 ## Processing Flow
 
