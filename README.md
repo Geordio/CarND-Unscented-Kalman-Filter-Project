@@ -9,6 +9,17 @@ This document describes my solution for the Udacity Unscented Kalman Filter proj
 The project can be compiled by execting 'make' in the build directory.
 The project has been developed on a linux environment
 
+## implementation
+
+The following C++ files were modified to implement my solution:
+
+File  |  Description
+--|--
+ukf.cpp & ukf.h  |  implement the UKF pipeline, including Initialisation, Prediction and Update steps
+tools.cpp  |  Implement the RMSE method
+
+In addition, a python file, nis_viz.py, to visualise the NIS was created.
+
 ## Accuracy
 
 When run against the simulator using Dataset 1, my implementation acheives a final RMSE of:
@@ -36,6 +47,15 @@ My implementation follows the general processing flow (as per the project skelet
 
 In addition, I calculate the NIS values for LIDAR and RADAR, and store these in a file for visulisation.
 
+The implementation can be modified to use radar or lidar only by modifying the parameters use_laser_ and use_radar_  below:
+```
+// if this is false, laser measurements will be ignored (except during init)
+use_laser_ = true;
+
+// if this is false, radar measurements will be ignored (except during init)
+use_radar_ = true;
+```
+
 ## NIS Visulations
 
 The NIS for the LIDAR and RADAR was visualised.
@@ -48,7 +68,7 @@ The visualisations of the NIS for LIDAR and RADAR are below.
 ![NIS LIDAR](https://github.com/Geordio/CarND-Unscented-Kalman-Filter-Project/blob/master/nis/NIS_plot_lidar.png)
 ![NIS RADAR](https://github.com/Geordio/CarND-Unscented-Kalman-Filter-Project/blob/master/nis/NIS_plot_radar.png)
 
-In both instances the majority of the data  points are below the 95% confience line as per the project objectives.
+In both instances the majority of the data  points are below the 95% confience line as per the project objectives. There appears to be an issue with the initialistaion of the RADAR, as the NIS value is much higher than expected, however the remianing points are all within the expected range.
 
 ## Code Efficency
 
