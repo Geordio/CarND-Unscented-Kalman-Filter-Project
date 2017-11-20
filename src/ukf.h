@@ -6,6 +6,8 @@
 #include <vector>
 #include <string>
 #include <fstream>
+#include <iostream>
+using namespace std;
 
 using Eigen::MatrixXd;
 using Eigen::VectorXd;
@@ -27,13 +29,6 @@ public:
 
   ///* state covariance matrix
   MatrixXd P_;
-
-//  //set state dimension
-//  int n_x_;
-//
-//  //set augmented dimension
-//  int n_aug_;
-
 
   ///* predicted sigma points matrix
   MatrixXd Xsig_pred_;
@@ -75,6 +70,15 @@ public:
   double lambda_;
 
 
+
+  ///* counts of Lidar and Radar measurements
+  int i_lidar_;
+  int i_radar_;
+  string radarNISFilename_;
+  string lidarNISFilename_;
+  ofstream radarNISFile_;
+  ofstream lidarNISFile_;
+
   /**
    * Constructor
    */
@@ -109,8 +113,15 @@ public:
    * @param meas_package The measurement at k+1
    */
   void UpdateRadar(MeasurementPackage meas_package);
-  void GenerateSigmaPoints(MatrixXd* Xsig_out);
-  void AugmentedSigmaPoints(MatrixXd* Xsig_out);
+
+  /**
+   * Opens 2 files to store the NIS for LIDAR and RADAR
+   *
+   */
+  void SetupCsv();
+
+
+
 };
 
 #endif /* UKF_H */
