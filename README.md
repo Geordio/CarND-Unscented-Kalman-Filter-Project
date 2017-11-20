@@ -37,7 +37,7 @@ Therefore the solution acheives the required performance.
 A screenshot can be seen below:
 ![Simulator View](https://github.com/Geordio/CarND-Unscented-Kalman-Filter-Project/blob/master/writeup/simulator%20_screenshot.png  "Simulator View")
 
-A zoomed in screen shot of the simulator, showing the UKF tracking the vehicle well in a turn.
+A zoomed in screen shot of the simulator, showing the UKF tracking the vehicle well in a turn. The position output by the UKF is shown as green triangles.
 
 ![Simulator View](https://github.com/Geordio/CarND-Unscented-Kalman-Filter-Project/blob/master/writeup/sim_zoomed_in.png  "Simulator View Zoomed")
 
