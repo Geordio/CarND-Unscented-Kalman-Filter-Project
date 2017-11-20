@@ -59,6 +59,8 @@ UKF::UKF() {
   // initialise the sigma prediction matrix
   Xsig_pred_ = MatrixXd(n_x_, 2 * n_aug_ + 1);
 
+  i_radar_ = 0;
+  i_lidar_ = 0;
   // setup files to store NIS readings
   radarNISFilename_ = "../nis/radarNIS.csv";
   lidarNISFilename_ = "../nis/lidarNIS.csv";
